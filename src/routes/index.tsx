@@ -66,9 +66,9 @@ const discoveries = [
 ];
 
 const reportNotes = [
-  "Visible condition, described",
-  "Public sources, one step away",
-  "A record of places you’ve seen",
+  "An AI-generated visible-condition estimate",
+  "Public heritage sources linked by site",
+  "An exportable Condition Report (PDF)",
 ];
 
 function HomePage() {
@@ -119,7 +119,6 @@ function HomePage() {
             <span><MapPin aria-hidden="true" /> Nizamuddin, Delhi</span>
             <span>Humayun’s Tomb <span className="caption-year">· 16th century</span></span>
           </figcaption>
-          <span className="image-index" aria-hidden="true">01 / 11</span>
         </figure>
 
         <div className="intro-meta" aria-label="About the app">
@@ -136,7 +135,7 @@ function HomePage() {
             <h2>Every monument has more <em>to tell.</em></h2>
           </div>
           <p className="section-intro">
-            Stambh is a companion for getting to know Delhi NCR’s heritage places—before, during, and after the visit.
+            Find heritage sites nearby, follow their stories, and save monuments, scans, and your own stories for the next visit.
           </p>
         </div>
 
@@ -158,8 +157,8 @@ function HomePage() {
         <div className="report-copy">
           <p className="eyebrow"><span className="eyebrow-rule" />An observation, not a verdict</p>
           <h2 id="report-title">One photo.<br />A new way to <em>pay attention.</em></h2>
-          <p className="report-description">
-            Stambh can estimate visible details in a monument photo and gather them into a Condition Report. Take the notes with you, or come back to them later.
+            <p className="report-description">
+            Stambh can estimate visible details in a monument photo, gather them into a Condition Report, and export the report as a PDF. Come back to your saved scans whenever you like.
           </p>
           <Button asChild variant="outline" className="report-link">
             <a href={playStoreUrl} target="_blank" rel="noreferrer">
@@ -231,7 +230,7 @@ function HomePage() {
           </Button>
         </div>
         <div className="closing-stamp" aria-hidden="true">
-          <span>DEHLI · NCR</span>
+          <span>DELHI · NCR</span>
           <span className="stamp-symbol">✳</span>
           <span>PAST / PRESENT</span>
         </div>
