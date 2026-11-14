@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Site structure
+
+- Keep the public-facing Stambh marketing experience as a single editorial page at `/`; this preserves the approved single-page scope and app-download journey.
