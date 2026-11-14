@@ -9,12 +9,14 @@ import {
   Compass,
   FileText,
   MapPin,
+  Play,
   ScanLine,
   ShieldCheck,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
+  AudienceSection,
   FaqSection,
   FeaturesSection,
   GallerySection,
@@ -22,6 +24,7 @@ import {
 } from "@/components/marketing-sections";
 import { PhoneDemo } from "@/components/phone-demo";
 import { useSiteEffects } from "@/hooks/use-site-effects";
+import playQr from "@/assets/play-qr.svg";
 import appIcon from "@/assets/app-icon.png";
 import humayunTomb from "@/assets/humayun-tomb.jpg";
 import "@/effects.css";
@@ -46,6 +49,22 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#f6efe2" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MobileApplication",
+          name: "Stambh",
+          operatingSystem: "ANDROID",
+          applicationCategory: "TravelApplication",
+          description:
+            "Discover Delhi NCR's heritage monuments, read their stories and get AI-generated estimates of their visible condition from a photo.",
+          downloadUrl: playStoreUrl,
+        }),
+      },
     ],
   }),
 });
@@ -132,6 +151,14 @@ function HomePage() {
                 <img src={appIcon} alt="" className="app-icon" aria-hidden="true" width={64} height={64} /> Get Stambh on Google Play <ArrowRight aria-hidden="true" />
               </a>
             </Button>
+            <a className="hero-secondary" href="#demo">
+              <Play aria-hidden="true" /> See how it works
+            </a>
+            <ul className="trust-chips" aria-label="Why people trust Stambh">
+              <li><ShieldCheck aria-hidden="true" /> Independent</li>
+              <li><BookOpen aria-hidden="true" /> Public sources linked</li>
+              <li><MapPin aria-hidden="true" /> Delhi NCR</li>
+            </ul>
           </div>
         </div>
 
@@ -199,6 +226,8 @@ function HomePage() {
       <FeaturesSection />
 
       <GallerySection />
+
+      <AudienceSection />
 
       <section className="report-section" aria-labelledby="report-title">
         <div className="report-copy" data-reveal>
@@ -277,6 +306,10 @@ function HomePage() {
               <img src={appIcon} alt="" className="app-icon" aria-hidden="true" width={64} height={64} /> Find Stambh on Google Play <ArrowUpRight aria-hidden="true" />
             </a>
           </Button>
+        </div>
+        <div className="closing-qr">
+          <img src={playQr} alt="QR code that opens Stambh on Google Play" width={140} height={140} />
+          <span>Scan to get Stambh on your phone</span>
         </div>
         <div className="closing-stamp" aria-hidden="true">
           <span>DELHI · NCR</span>

@@ -1,5 +1,9 @@
 import {
   ArrowUpRight,
+  Camera,
+  GraduationCap,
+  Footprints,
+  Users,
   BookOpen,
   FileText,
   History,
@@ -66,6 +70,29 @@ const features = [
     tone: "sky",
     title: "Did You Know?",
     text: "Bite-sized facts and insights that make the next walk past a monument more interesting.",
+  },
+];
+
+const audiences = [
+  {
+    icon: Footprints,
+    title: "Curious wanderers",
+    text: "Spotted a dome from the metro? Scan it and find out what it is and what it has seen.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Students & teachers",
+    text: "Bring history out of the textbook, with stories and public sources you can follow.",
+  },
+  {
+    icon: Camera,
+    title: "Photographers",
+    text: "Pick a shot from your gallery and see what the AI notices in the frame.",
+  },
+  {
+    icon: Users,
+    title: "Weekend families",
+    text: "Turn a monument visit into a small treasure hunt with facts to discover along the way.",
   },
 ];
 
@@ -141,6 +168,31 @@ export function FeaturesSection() {
             <img src={appIcon} alt="" className="app-icon" aria-hidden="true" width={64} height={64} /> Get it on Google Play <ArrowUpRight aria-hidden="true" />
           </a>
         </article>
+      </div>
+    </section>
+  );
+}
+
+export function AudienceSection() {
+  return (
+    <section className="mk-section audience-section" aria-labelledby="audience-title">
+      <div className="mk-heading" data-reveal>
+        <p className="eyebrow">
+          <span className="eyebrow-rule" />
+          Who it’s for
+        </p>
+        <h2 id="audience-title">
+          For anyone who <em>looks up.</em>
+        </h2>
+      </div>
+      <div className="audience-grid">
+        {audiences.map(({ icon: Icon, title, text }, i) => (
+          <article className="audience-card" data-reveal key={title} style={{ "--i": i } as React.CSSProperties}>
+            <Icon aria-hidden="true" />
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
       </div>
     </section>
   );
