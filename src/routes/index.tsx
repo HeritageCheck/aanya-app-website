@@ -7,7 +7,6 @@ import {
   Camera,
   Check,
   Compass,
-  Download,
   FileText,
   MapPin,
   ScanLine,
@@ -15,7 +14,15 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import {
+  FaqSection,
+  FeaturesSection,
+  GallerySection,
+  StickyDownload,
+} from "@/components/marketing-sections";
+import { PhoneDemo } from "@/components/phone-demo";
 import { useSiteEffects } from "@/hooks/use-site-effects";
+import appIcon from "@/assets/app-icon.png";
 import humayunTomb from "@/assets/humayun-tomb.jpg";
 import "@/effects.css";
 
@@ -93,15 +100,17 @@ function HomePage() {
       <div className="cursor-glow" aria-hidden="true" />
       <header className="site-header">
         <a aria-label="Stambh home" className="wordmark" href="#home">
-          <span className="wordmark-mark" aria-hidden="true">S.</span>
+          <img src={appIcon} alt="" className="app-icon app-icon-logo" aria-hidden="true" width={64} height={64} />
           <span>STAMBH</span>
         </a>
         <nav aria-label="Main navigation" className="site-nav">
           <a href="#how-it-works">The app</a>
+          <a href="#features">Features</a>
           <a href="#approach">Our approach</a>
+          <a href="#faq">FAQ</a>
           <Button asChild size="sm" className="nav-download">
             <a href={playStoreUrl} target="_blank" rel="noreferrer">
-              Get the app <ArrowUpRight aria-hidden="true" />
+              <img src={appIcon} alt="" className="app-icon" aria-hidden="true" width={64} height={64} /> Get the app <ArrowUpRight aria-hidden="true" />
             </a>
           </Button>
         </nav>
@@ -120,7 +129,7 @@ function HomePage() {
             </p>
             <Button asChild size="lg" className="download-button" data-magnetic>
               <a href={playStoreUrl} target="_blank" rel="noreferrer">
-                <Download aria-hidden="true" /> Get Stambh on Google Play <ArrowRight aria-hidden="true" />
+                <img src={appIcon} alt="" className="app-icon" aria-hidden="true" width={64} height={64} /> Get Stambh on Google Play <ArrowRight aria-hidden="true" />
               </a>
             </Button>
           </div>
@@ -185,6 +194,12 @@ function HomePage() {
         </div>
       </section>
 
+      <PhoneDemo />
+
+      <FeaturesSection />
+
+      <GallerySection />
+
       <section className="report-section" aria-labelledby="report-title">
         <div className="report-copy" data-reveal>
           <p className="eyebrow"><span className="eyebrow-rule" />An observation, not a verdict</p>
@@ -194,7 +209,7 @@ function HomePage() {
           </p>
           <Button asChild variant="outline" className="report-link">
             <a href={playStoreUrl} target="_blank" rel="noreferrer">
-              Explore the app <ArrowUpRight aria-hidden="true" />
+              <img src={appIcon} alt="" className="app-icon" aria-hidden="true" width={64} height={64} /> Explore the app <ArrowUpRight aria-hidden="true" />
             </a>
           </Button>
         </div>
@@ -250,14 +265,16 @@ function HomePage() {
         </div>
       </section>
 
+      <FaqSection />
+
       <section className="closing-section">
         <div className="closing-copy" data-reveal>
-          <span className="closing-mark" aria-hidden="true">S.</span>
+          <img src={appIcon} alt="" className="closing-icon" aria-hidden="true" width={96} height={96} />
           <p className="eyebrow">Delhi NCR, seen anew</p>
           <h2>Take the long way.<br /><em>Bring a little context.</em></h2>
           <Button asChild size="lg" className="closing-button" data-magnetic>
             <a href={playStoreUrl} target="_blank" rel="noreferrer">
-              Find Stambh on Google Play <ArrowUpRight aria-hidden="true" />
+              <img src={appIcon} alt="" className="app-icon" aria-hidden="true" width={64} height={64} /> Find Stambh on Google Play <ArrowUpRight aria-hidden="true" />
             </a>
           </Button>
         </div>
@@ -269,12 +286,13 @@ function HomePage() {
       </section>
 
       <footer className="site-footer">
-        <a aria-label="Stambh home" className="footer-wordmark" href="#home">STAMBH<span>.</span></a>
-        <p>A companion to the places that outlast us.</p>
+        <a aria-label="Stambh home" className="footer-wordmark" href="#home"><img src={appIcon} alt="" className="app-icon app-icon-logo" aria-hidden="true" width={64} height={64} />STAMBH<span>.</span></a>
+        <p>A companion to the places that outlast us. An Iron Pillar Project initiative.</p>
         <a className="footer-play-link" href={playStoreUrl} target="_blank" rel="noreferrer">
-          Google Play <ArrowUpRight aria-hidden="true" />
+          <img src={appIcon} alt="" className="app-icon" aria-hidden="true" width={64} height={64} /> Google Play <ArrowUpRight aria-hidden="true" />
         </a>
       </footer>
+      <StickyDownload />
     </main>
   );
 }

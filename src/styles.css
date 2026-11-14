@@ -181,7 +181,7 @@
   align-items: center;
   gap: 10px;
   color: var(--foreground);
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -203,7 +203,7 @@
   display: flex;
   align-items: center;
   gap: 34px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 500;
 }
 
@@ -248,7 +248,7 @@
   gap: 10px;
   margin: 0 0 16px;
   color: var(--accent);
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1.5;
@@ -306,7 +306,7 @@
 .report-description {
   margin: 0;
   color: var(--muted-foreground);
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.85;
 }
 
@@ -318,7 +318,7 @@
   min-height: 46px;
   border-radius: 3px;
   padding-inline: 17px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .download-button svg:last-child {
@@ -347,7 +347,7 @@
   gap: 20px;
   padding-top: 15px;
   color: var(--muted-foreground);
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .image-caption > span:first-child {
@@ -379,7 +379,7 @@
   padding: 7px 9px;
   background: var(--background);
   color: var(--foreground);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.08em;
 }
 
@@ -390,7 +390,7 @@
   gap: 20px;
   min-height: 54px;
   color: var(--muted-foreground);
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .intro-meta > span,
@@ -483,7 +483,7 @@
   max-width: 340px;
   margin: 0;
   color: var(--muted-foreground);
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -508,7 +508,7 @@
 .report-link {
   height: 40px;
   border-radius: 3px;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .report-sheet {
@@ -545,7 +545,7 @@
 
 .sheet-kicker {
   color: var(--accent);
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.12em;
 }
@@ -570,7 +570,7 @@
   gap: 7px;
   margin: 19px 0 14px;
   color: var(--muted-foreground);
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .sheet-monument svg {
@@ -597,7 +597,7 @@
   align-items: center;
   gap: 9px;
   color: var(--foreground);
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .sheet-notes svg {
@@ -613,7 +613,7 @@
   padding-block: 12px;
   border-top: 1px solid var(--border);
   color: var(--muted-foreground);
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.05em;
 }
 
@@ -674,12 +674,12 @@
 
 .approach-item h3 {
   margin-bottom: 4px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .approach-item p {
   max-width: 485px;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .closing-section {
@@ -726,7 +726,7 @@
   border-radius: 3px;
   background: var(--background);
   color: var(--foreground);
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .closing-button:hover {
@@ -746,7 +746,7 @@
   border: 1px solid color-mix(in oklab, var(--primary-foreground) 34%, transparent);
   border-radius: 50%;
   color: var(--primary-foreground);
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   opacity: 0.65;
   transform: rotate(-12deg);
@@ -768,7 +768,7 @@
 
 .footer-wordmark {
   gap: 0;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .footer-wordmark span {
@@ -779,7 +779,7 @@
   margin: 0;
   color: var(--muted-foreground);
   font-family: var(--font-serif);
-  font-size: 12px;
+  font-size: 15px;
   font-style: italic;
 }
 
@@ -787,7 +787,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 10px;
+  font-size: 13px;
   transition: color 180ms ease;
 }
 
@@ -919,7 +919,7 @@
   .nav-download {
     height: 34px;
     padding-inline: 11px;
-    font-size: 10px;
+    font-size: 13px;
   }
 
   .intro-section {
@@ -943,12 +943,12 @@
 
   .intro-description {
     max-width: 340px;
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .download-button {
     min-height: 43px;
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .monument-image {
@@ -958,7 +958,7 @@
 
   .image-caption {
     align-items: flex-start;
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .caption-year {
@@ -988,7 +988,7 @@
   }
 
   .section-intro {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .discovery-grid {
@@ -1020,7 +1020,7 @@
   }
 
   .report-description {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .report-sheet {
