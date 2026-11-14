@@ -15,7 +15,9 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { useSiteEffects } from "@/hooks/use-site-effects";
 import humayunTomb from "@/assets/humayun-tomb.jpg";
+import "@/effects.css";
 
 const playStoreUrl = "https://play.google.com/store/apps/details?id=com.stambh.aanya&pcampaignid=web_share";
 
@@ -65,6 +67,17 @@ const discoveries = [
   },
 ];
 
+const marqueeItems = [
+  "Humayun’s Tomb",
+  "Qutub Minar",
+  "Red Fort",
+  "Purana Qila",
+  "Safdarjung’s Tomb",
+  "Jantar Mantar",
+  "Agrasen ki Baoli",
+  "Lodhi Garden",
+];
+
 const reportNotes = [
   "An AI-generated visible-condition estimate",
   "Public heritage sources linked by site",
@@ -72,8 +85,12 @@ const reportNotes = [
 ];
 
 function HomePage() {
+  useSiteEffects();
+
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
+      <div className="scroll-progress" aria-hidden="true" />
+      <div className="cursor-glow" aria-hidden="true" />
       <header className="site-header">
         <a aria-label="Stambh home" className="wordmark" href="#home">
           <span className="wordmark-mark" aria-hidden="true">S.</span>
@@ -93,12 +110,15 @@ function HomePage() {
       <section id="home" className="intro-section">
         <div className="intro-copy">
           <p className="eyebrow"><span className="eyebrow-rule" />A field companion for Delhi’s heritage</p>
-          <h1>The city keeps its stories. <em>Look a little closer.</em></h1>
+          <h1 className="hero-title">
+            <span className="line"><span>The city keeps its stories.</span></span>{" "}
+            <span className="line"><em><span>Look a little closer.</span></em></span>
+          </h1>
           <div className="intro-bottom">
             <p className="intro-description">
               Find the monuments around you. Learn what they’ve lived through. Notice how they look today.
             </p>
-            <Button asChild size="lg" className="download-button">
+            <Button asChild size="lg" className="download-button" data-magnetic>
               <a href={playStoreUrl} target="_blank" rel="noreferrer">
                 <Download aria-hidden="true" /> Get Stambh on Google Play <ArrowRight aria-hidden="true" />
               </a>
@@ -121,6 +141,18 @@ function HomePage() {
           </figcaption>
         </figure>
 
+        <div className="monument-marquee" aria-hidden="true">
+          <div className="marquee-track">
+            {[0, 1].map((n) => (
+              <div className="marquee-group" key={n}>
+                {marqueeItems.map((item) => (
+                  <span key={`${n}-${item}`}>{item}<i>✳</i></span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="intro-meta" aria-label="About the app">
           <span><Compass aria-hidden="true" /> Made for wandering</span>
           <span><ScanLine aria-hidden="true" /> Heritage, in the present tense</span>
@@ -129,7 +161,7 @@ function HomePage() {
       </section>
 
       <section id="how-it-works" className="discovery-section">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <div>
             <p className="eyebrow"><span className="eyebrow-rule" />A city made of many times</p>
             <h2>Every monument has more <em>to tell.</em></h2>
@@ -140,8 +172,8 @@ function HomePage() {
         </div>
 
         <div className="discovery-grid">
-          {discoveries.map(({ number, icon: Icon, title, description }) => (
-            <article className="discovery-item" key={number}>
+          {discoveries.map(({ number, icon: Icon, title, description }, index) => (
+            <article className="discovery-item" key={number} data-reveal style={{ "--i": index } as React.CSSProperties}>
               <div className="discovery-topline">
                 <span className="discovery-number">{number}</span>
                 <Icon aria-hidden="true" className="discovery-icon" />
@@ -154,7 +186,7 @@ function HomePage() {
       </section>
 
       <section className="report-section" aria-labelledby="report-title">
-        <div className="report-copy">
+        <div className="report-copy" data-reveal>
           <p className="eyebrow"><span className="eyebrow-rule" />An observation, not a verdict</p>
           <h2 id="report-title">One photo.<br />A new way to <em>pay attention.</em></h2>
             <p className="report-description">
@@ -166,7 +198,7 @@ function HomePage() {
             </a>
           </Button>
         </div>
-        <div className="report-sheet" aria-label="A sample of the information a Stambh report can include">
+        <div className="report-sheet" data-reveal data-tilt aria-label="A sample of the information a Stambh report can include">
           <div className="sheet-heading">
             <div>
               <span className="sheet-kicker">STAMBH / FIELD NOTE</span>
@@ -189,26 +221,26 @@ function HomePage() {
       </section>
 
       <section id="approach" className="approach-section">
-        <div className="approach-heading">
+        <div className="approach-heading" data-reveal>
           <p className="eyebrow"><span className="eyebrow-rule" />Grounded in what’s known</p>
           <h2>Curious by nature.<br /><em>Careful by design.</em></h2>
         </div>
         <div className="approach-details">
-          <article className="approach-item">
+          <article className="approach-item" data-reveal>
             <ShieldCheck aria-hidden="true" />
             <div>
               <h3>Independent, always</h3>
               <p>Stambh is not affiliated with, endorsed by, or a representative of the Archaeological Survey of India or any government body.</p>
             </div>
           </article>
-          <article className="approach-item">
+          <article className="approach-item" data-reveal>
             <BookOpen aria-hidden="true" />
             <div>
               <h3>Sources you can follow</h3>
               <p>Heritage and protection information links back to public sources, including the ASI and UNESCO.</p>
             </div>
           </article>
-          <article className="approach-item">
+          <article className="approach-item" data-reveal>
             <ScanLine aria-hidden="true" />
             <div>
               <h3>An estimate, not an inspection</h3>
@@ -219,11 +251,11 @@ function HomePage() {
       </section>
 
       <section className="closing-section">
-        <div className="closing-copy">
+        <div className="closing-copy" data-reveal>
           <span className="closing-mark" aria-hidden="true">S.</span>
           <p className="eyebrow">Delhi NCR, seen anew</p>
           <h2>Take the long way.<br /><em>Bring a little context.</em></h2>
-          <Button asChild size="lg" className="closing-button">
+          <Button asChild size="lg" className="closing-button" data-magnetic>
             <a href={playStoreUrl} target="_blank" rel="noreferrer">
               Find Stambh on Google Play <ArrowUpRight aria-hidden="true" />
             </a>
